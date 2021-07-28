@@ -1,0 +1,64 @@
+ol li {
+    background-color: yellow;
+}
+
+li {
+    font-size: 20px;
+}
+
+li em {
+    font-weight: bold;
+}
+
+.even {
+    color: green;
+}
+
+.odd {
+    text-transform: uppercase;
+}
+
+.color-blue {
+    color: blue;
+}
+
+.background-pink {
+    background-color: pink;
+}
+
+.hover li:hover {
+    font-weight: bold;
+}
+
+.color-orange:hover {
+    color: orange;
+}
+
+.color-green:hover {
+    color: green;
+}
+
+.color-black:hover {
+    color: black;
+}
+
+.color-yellow:hover {
+    color: yellow;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+    color: red;
+}
+
+h1 em,
+h2 em,
+h3 em,
+h4 em,
+h5 em {
+    font-size: 40px;
+    border: 1px black solid;
+}

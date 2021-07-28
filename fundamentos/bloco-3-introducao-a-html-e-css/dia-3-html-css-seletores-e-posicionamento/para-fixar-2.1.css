@@ -1,0 +1,51 @@
+div:hover {
+    border: 2px red solid;
+}
+
+h3 {
+    font-style: italic;
+}
+
+.primary-color {
+    background-color: yellow;
+}
+
+.secondary-color {
+    background-color: green;
+}
+
+.complementary-color {
+    background-color: violet;
+    height: 50px;
+}
+
+.dark-color {
+    background-color: black;
+}
+
+.light-color {
+    background-color: whitesmoke;
+}
+
+
+/* H3 SECTION */
+
+.h3-primary-color {
+    color: whitesmoke;
+}
+
+.h3-secondary-color {
+    color: red;
+}
+
+.h3-complementary-color {
+    color: green;
+}
+
+.h3-dark-color {
+    color: blue;
+}
+
+.h3-light-color {
+    color: black;
+}
