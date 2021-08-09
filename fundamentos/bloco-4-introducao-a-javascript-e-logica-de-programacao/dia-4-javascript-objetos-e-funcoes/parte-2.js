@@ -14,5 +14,24 @@ function verifyPalindrome (word){
   return isPalindrome;
 }
 
+//2 - Crie uma função que receba um array de inteiros e retorne o índice do maior valor.
 
-console.log(verifyPalindrome('arara'));
+function higherIndex(){
+  for (index in array){
+    if(array[index -1] > array[index]){
+      console.log(array[index]);
+    }
+  }
+}
+let array = [2, 3, 6, 7, 10, 1];
+
+for (index in array){
+
+  if(array[index -1] > array[index]){
+
+    let value = array[index];
+
+  }
+
+}
+console.log(value);
