@@ -50,13 +50,54 @@
     - document.getElementById()
     - document.getElementsByClassName()
     - document.getElementsByTagName()
-    Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)
-    Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)).
-    Crie uma função que mude a cor do quadrado vermelho para branco.
-    Crie uma função que corrija o texto da tag <h1>.
-    Crie uma função que modifique todo o texto da tag <p> para maiúsculo.
+    Crie uma função que mude o texto na tag <p> para uma descrição de como você se vê daqui a 2 anos. (Não gaste tempo pensando no texto e sim realizando o exercício)||
+    Crie uma função que mude a cor do quadrado amarelo para o verde da Trybe (rgb(76,164,109)). ||
+    Crie uma função que mude a cor do quadrado vermelho para branco. ||
+    Crie uma função que corrija o texto da tag <h1>. ||
+    Crie uma função que modifique todo o texto da tag <p> para maiúsculo. ||
     Crie uma função que exiba o conteúdo de todas as tags <p> no console.
     */
+    function changePTagText(text) {
+      let arrayOfElements = document.getElementsByTagName('p');
+      for (let i = 0; i < arrayOfElements.length; i += 1) {
+        document.getElementsByTagName('p')[i].innerHTML = text;
+      }
+    }
+    function changeBackgroundColor(element, color) {
+      let arrayOfElements = document.getElementsByClassName(element);
+      for (let i = 0; i < arrayOfElements.length; i += 1) {
+        document.getElementsByClassName(element)[i].style.backgroundColor = color;
+      }
+
+    }
+    function changeTagText(tag, text) {
+      let arrayOfElements = document.getElementsByTagName(tag);
+      for (let i = 0; i < arrayOfElements.length; i += 1) {
+        document.getElementsByTagName('h1')[i].innerText = text;
+      }
+    }
+    function toUpperCaseText(element) {
+      let arrayOfElements = document.getElementsByTagName(element);
+      let text = '';
+      for (let i = 0; i < arrayOfElements.length; i += 1) {
+        text = arrayOfElements[i].innerText;
+        arrayOfElements[i].innerText = text.toUpperCase();
+      }
+    }
+    function showTagContent(tag) {
+      let arrayOfElements = document.getElementsByTagName(tag);
+      for (let i = 0; i < arrayOfElements.length; i += 1) {
+        console.log(arrayOfElements[i].innerHTML);
+      }
+    }
+
+    changePTagText("Quero ser muito bom em backend!");
+    changeBackgroundColor('main-content', 'rgb(76,164,109)');
+    changeBackgroundColor('center-content', 'white');
+    changeTagText('h1', 'Exercício 5.1 - JavaScript')
+    toUpperCaseText('p');
+    showTagContent('p');
+
   </script>
 </body>
 
