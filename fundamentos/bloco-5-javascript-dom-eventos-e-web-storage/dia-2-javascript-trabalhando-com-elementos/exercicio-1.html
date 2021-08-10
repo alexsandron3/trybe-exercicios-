@@ -77,7 +77,7 @@
     document.querySelector('section').appendChild(P).innerText = 'Aqui um parágrafo';
 
     // #5 Adicione a tag section com a classe left-content como filho da tag main criada no passo 2;
-    // document.querySelector('main').appendChild(SECTION).classList.add('left-content');
+    document.querySelector('main').appendChild(SECTION).classList.add('left-content');
     document.querySelector('main').appendChild(document.createElement('section')).classList.add('left-content');
 
     // #6 Adicione a tag section com a classe right-content como filho da tag main criada no passo 2;
@@ -102,6 +102,10 @@
     for (let i = 0; i <= 3; i += 1) {
       document.querySelector('main').appendChild(document.createElement('h3'));
     }
+
+    // Bonus
+    // #1 Adicione a classe title na tag h1 criada;
+    document.querySelector('h1').classList.add('title');
 
   </script>
 </body>
