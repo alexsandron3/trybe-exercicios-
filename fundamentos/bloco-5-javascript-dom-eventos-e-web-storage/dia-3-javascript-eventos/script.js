@@ -64,19 +64,38 @@ newSelector = (array, element, selector, selectorName) => {
 }
 
 changeBackgroundColor = (eventElement, element, value, location) => {
+  let defaultColor = '#eee'; 
   element.addEventListener(eventElement, () => {
     for (let index = 0; index < location.length; index += 1){
-      location[index].style.backgroundColor = value;
+      if(location[index].style.backgroundColor !== value) {
+        location[index].style.backgroundColor = value;
+      }else{
+        console.log(defaultColor);
+        location[index].style.backgroundColor = defaultColor; 
+
+      }
     }
   })
 }
 
 changeText = (eventElement, element, value, location) => {
-  element.addEventListener(eventElement, () => {
-    for (let index = 0; index < location.length; index += 1){
-      location[index].innerHTML = value;
-    }
-  })
+  let defaultText = [];
+  for (let index = 0 ; index < location.length; index += 1){
+    defaultText.push(location[index].innerHTML);
+  }
+  console.log(defaultText);
+
+  for (let index = 0; index < location.length; index += 1){
+    element.addEventListener(eventElement, () => {
+      if(location[index].innerHTML !== value){
+        location[index].innerHTML = value;
+        
+      }else{
+        console.log(defaultText);
+        location[index].innerHTML = defaultText[index]
+      }
+    })
+  }
 }
 
 // -----------------------------------------------------------------------
