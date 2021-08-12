@@ -71,6 +71,14 @@ changeBackgroundColor = (eventElement, element, value, location) => {
   })
 }
 
+changeText = (eventElement, element, value, location) => {
+  element.addEventListener(eventElement, () => {
+    for (let index = 0; index < location.length; index += 1){
+      location[index].innerHTML = value;
+    }
+  })
+}
+
 // -----------------------------------------------------------------------
 createDaysOfTheWeek();
 
@@ -101,5 +109,8 @@ createNewElement('button', 'Sexta-Feira', divButtons);
 // const fridayButton = 1;
 newSelector(0, fridayButton.nextElementSibling, 'id', 'btn-friday')
 
+// #EX 5
+const classFriday = document.getElementsByClassName('friday');
+changeText('click', fridayButton.nextElementSibling, 'Sextou!!', classFriday);
 
 // Escreva seu código abaixo.
