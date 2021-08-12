@@ -1,4 +1,4 @@
-function createDaysOfTheWeek() {
+createDaysOfTheWeek = () => {
   const weekDays = ['Domingo', 'Segunda', 'Terça', 'Quarta', 'Quinta', 'Sexta', 'Sábado']
   
   
@@ -14,7 +14,7 @@ function createDaysOfTheWeek() {
 };
 
 // # Funções para resolução dos Exercícios
-function createNewElement(element, elementContent, location) {
+createNewElement = (element, elementContent, location) => {
 
   if(Array.isArray(elementContent)){
     for (let index = 0; index < elementContent.length; index += 1) {
@@ -30,7 +30,7 @@ function createNewElement(element, elementContent, location) {
   }
 }
 
-function newSelector (array, element, elementName){
+newSelector = (array, element, elementName) => {
   for (let index = 0; index < array.length; index += 1) {
     switch (elementName) {
       case 'holiday':
@@ -48,29 +48,29 @@ function newSelector (array, element, elementName){
   }
 }
 
-function changeBackgroundColor (eventElement, element, value, location){
+changeBackgroundColor = (eventElement, element, value, location) => {
   element.addEventListener(eventElement, () => {
     for (let index = 0; index < location.length; index += 1){
-      location[index].style.backgroudColor = value;
+      location[index].style.backgroundColor = value;
     }
   })
 }
 
 // -----------------------------------------------------------------------
 
+// #EX 1
 const dezDays = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const idDay = document.getElementById('days');
 const li = document.getElementById('days').children;
-const divButtons = document.querySelector('.buttons-container');
 const classHoliday = document.getElementsByClassName('holiday');
 let holidays = [25, 26, 32];
 let fridays = [5, 12, 19, 26]
-
-// #EX 1
 createNewElement('li', dezDays, idDay, 'class', 'day');
 newSelector(holidays, li, 'holiday');
 newSelector(fridays, li, 'friday');
 // #EX 2
+const divButtons = document.querySelector('.buttons-container');
+
 createNewElement('button', 'Feriados', divButtons, 'id', 'btn-holiday');
 
 // #EX 3
