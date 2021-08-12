@@ -94,9 +94,12 @@ newSelector(0 , fridayButton, 'id', 'friday');
 // #EX 3
 const holidayButton = divButtons.firstElementChild;
 changeBackgroundColor('click', holidayButton, 'blue', classHoliday);
-
 newSelector(0, holidayButton, 'id', 'btn-holiday')
+
 // #EX 4
 createNewElement('button', 'Sexta-Feira', divButtons);
+// const fridayButton = 1;
+newSelector(0, fridayButton.nextElementSibling, 'id', 'btn-friday')
+
 
 // Escreva seu código abaixo.
