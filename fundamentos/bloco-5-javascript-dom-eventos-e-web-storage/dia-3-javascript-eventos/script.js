@@ -14,15 +14,20 @@ function createDaysOfTheWeek() {
 };
 
 // # EX1
-function createNewElement(element, arrayOfContent, location) {
+function createNewElement(element, elementContent, location) {
 
-  for (let index = 0; index < arrayOfContent.length; index += 1) {
-    const content = arrayOfContent[index];
+  if(Array.isArray(elementContent)){
+    for (let index = 0; index < elementContent.length; index += 1) {
+      const content = elementContent[index];
+      const newElement = document.createElement(element);
+      newElement.innerHTML = content;
+      location.appendChild(newElement);
+    }
+  }else{
     const newElement = document.createElement(element);
-    newElement.innerHTML = content;
+    newElement.innerHTML = elementContent;
     location.appendChild(newElement);
   }
-
 }
 
 function newSelector (array, element, elementName){
@@ -48,11 +53,13 @@ function newSelector (array, element, elementName){
 const dezDays = [29, 30, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31];
 const idDay = document.getElementById('days');
 const li = document.getElementById('days').children;
+const divButtons = document.querySelector('.buttons-container');
 let holidays = [25, 26, 32];
 let fridays = [5, 12, 19, 26]
 createNewElement('li', dezDays, idDay, 'class', 'day');
 newSelector(holidays, li, 'holiday');
 newSelector(fridays, li, 'friday');
+createNewElement('button', 'Feriados', divButtons, 'id', 'btn-holiday');
 
 createDaysOfTheWeek();
 
