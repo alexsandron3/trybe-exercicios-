@@ -79,22 +79,17 @@ changeBackgroundColor = (eventElement, element, value, location) => {
 
 changeText = (eventElement, element, value, location) => {
   let defaultText = [];
-  if(Array.isArray(location)){
-    for (let index = 0 ; index < location.length; index += 1){
-      defaultText.push(location[index].innerHTML);
-    }
-    for (let index = 0; index < location.length; index += 1){
-    }
-  }else{
+  for (let index = 0 ; index < location.length; index += 1){
+    defaultText.push(location[index].innerHTML);
+  }
+  for (let index = 0; index < location.length; index += 1){
     element.addEventListener(eventElement, () => {
-      location.innerHTML = value.value;
-      // if(location.innerHTML !== value){
-      //   location.innerHTML = value;
-      // }else{
-      //   // location.innerHTML = defaultText
-      // }
+      if(location[index].innerHTML !== value){
+        location[index].innerHTML = value;
+      }else{
+        location[index].innerHTML = defaultText[index]
+      }
     })
-    
   }
 }
 
@@ -115,6 +110,16 @@ zoomOut = (eventElement, element, value, location) => {
       // console.log(location.style.fontsize)
     })
   }
+}
+
+createNewAssignment = (eventLocation, element, elementContent, assigmentLocation) => {
+  eventLocation.addEventListener('click', (event) => {
+    createNewElement(element, elementContent.value, assigmentLocation)
+    const spanLocation = document.querySelectorAll('.my-tasks > span');
+    for(let index = 0; index < spanLocation.length; index += 1){
+      spanLocation[index].style.display = 'block';
+    }
+  })
 }
 
 // -----------------------------------------------------------------------
@@ -157,11 +162,9 @@ zoomIn('mouseover', dayItemList, '30px', dayItemList);
 zoomOut('mouseout', dayItemList, '20px', dayItemList);
  
 // #EX 7
-const newAssignmentInputValue = document.getElementById('task-input');
 const classMyTasks = document.querySelector('.my-tasks');
 const addNewAssignmentButton = document.getElementById('btn-add');
-createNewElement('span', '', classMyTasks);
-const spanLocation = document.querySelector('span');
-changeText('click', addNewAssignmentButton, newAssignmentInputValue, spanLocation)
+const newAssignmentInputValue = document.getElementById('task-input');
+createNewAssignment(addNewAssignmentButton, 'span', newAssignmentInputValue, classMyTasks)
 
 // Escreva seu código abaixo.
