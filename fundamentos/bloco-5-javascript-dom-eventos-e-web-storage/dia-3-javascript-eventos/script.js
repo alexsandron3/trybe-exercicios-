@@ -72,7 +72,6 @@ changeBackgroundColor = (eventElement, element, value, location) => {
       }else{
         console.log(defaultColor);
         location[index].style.backgroundColor = defaultColor; 
-
       }
     }
   })
@@ -83,17 +82,32 @@ changeText = (eventElement, element, value, location) => {
   for (let index = 0 ; index < location.length; index += 1){
     defaultText.push(location[index].innerHTML);
   }
-  console.log(defaultText);
-
   for (let index = 0; index < location.length; index += 1){
     element.addEventListener(eventElement, () => {
       if(location[index].innerHTML !== value){
         location[index].innerHTML = value;
-        
       }else{
-        console.log(defaultText);
         location[index].innerHTML = defaultText[index]
       }
+    })
+  }
+}
+
+zoomIn = (eventElement, element, value, location) => {
+  for (let index = 0; index < location.length; index += 1) {
+    element[index].addEventListener(eventElement, () => {
+      location[index].style.fontSize = value;
+      // console.log(location[index])
+      // console.log(location.style.fontsize)
+    })
+  }
+}
+zoomOut = (eventElement, element, value, location) => {
+  for (let index = 0; index < location.length; index += 1) {
+    element[index].addEventListener(eventElement, () => {
+      location[index].style.fontSize = value;
+      // console.log(location[index])
+      // console.log(location.style.fontsize)
     })
   }
 }
@@ -131,5 +145,11 @@ newSelector(0, fridayButton.nextElementSibling, 'id', 'btn-friday')
 // #EX 5
 const classFriday = document.getElementsByClassName('friday');
 changeText('click', fridayButton.nextElementSibling, 'Sextou!!', classFriday);
+
+// #EX 6 
+const dayItemList = idDay.getElementsByTagName('li')
+zoomIn('mouseover', dayItemList, '30px', dayItemList)
+zoomOut('mouseout', dayItemList, '20px', dayItemList)
+
 
 // Escreva seu código abaixo.
