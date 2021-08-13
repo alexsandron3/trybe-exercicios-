@@ -79,17 +79,22 @@ changeBackgroundColor = (eventElement, element, value, location) => {
 
 changeText = (eventElement, element, value, location) => {
   let defaultText = [];
-  for (let index = 0 ; index < location.length; index += 1){
-    defaultText.push(location[index].innerHTML);
-  }
-  for (let index = 0; index < location.length; index += 1){
+  if(Array.isArray(location)){
+    for (let index = 0 ; index < location.length; index += 1){
+      defaultText.push(location[index].innerHTML);
+    }
+    for (let index = 0; index < location.length; index += 1){
+    }
+  }else{
     element.addEventListener(eventElement, () => {
-      if(location[index].innerHTML !== value){
-        location[index].innerHTML = value;
-      }else{
-        location[index].innerHTML = defaultText[index]
-      }
+      location.innerHTML = value.value;
+      // if(location.innerHTML !== value){
+      //   location.innerHTML = value;
+      // }else{
+      //   // location.innerHTML = defaultText
+      // }
     })
+    
   }
 }
 
@@ -135,12 +140,12 @@ newSelector(0 , fridayButton, 'id', 'friday');
 // #EX 3
 const holidayButton = divButtons.firstElementChild;
 changeBackgroundColor('click', holidayButton, 'blue', classHoliday);
-newSelector(0, holidayButton, 'id', 'btn-holiday')
+newSelector(0, holidayButton, 'id', 'btn-holiday');
 
 // #EX 4
 createNewElement('button', 'Sexta-Feira', divButtons);
 // const fridayButton = 1;
-newSelector(0, fridayButton.nextElementSibling, 'id', 'btn-friday')
+newSelector(0, fridayButton.nextElementSibling, 'id', 'btn-friday');
 
 // #EX 5
 const classFriday = document.getElementsByClassName('friday');
@@ -148,8 +153,15 @@ changeText('click', fridayButton.nextElementSibling, 'Sextou!!', classFriday);
 
 // #EX 6 
 const dayItemList = idDay.getElementsByTagName('li')
-zoomIn('mouseover', dayItemList, '30px', dayItemList)
-zoomOut('mouseout', dayItemList, '20px', dayItemList)
-
+zoomIn('mouseover', dayItemList, '30px', dayItemList);
+zoomOut('mouseout', dayItemList, '20px', dayItemList);
+ 
+// #EX 7
+const newAssignmentInputValue = document.getElementById('task-input');
+const classMyTasks = document.querySelector('.my-tasks');
+const addNewAssignmentButton = document.getElementById('btn-add');
+createNewElement('span', '', classMyTasks);
+const spanLocation = document.querySelector('span');
+changeText('click', addNewAssignmentButton, newAssignmentInputValue, spanLocation)
 
 // Escreva seu código abaixo.
