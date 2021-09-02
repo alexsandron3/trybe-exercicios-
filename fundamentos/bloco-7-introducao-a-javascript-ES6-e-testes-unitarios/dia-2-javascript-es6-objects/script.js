@@ -1,34 +1,15 @@
-const lesson1 = {
-  materia: 'Matemática',
-  numeroEstudantes: 20,
-  professor: 'Maria Clara',
-  turno: 'manhã',
-};
+const assert = require('assert');
 
-const lesson2 = {
-  materia: 'História',
-  numeroEstudantes: 20,
-  professor: 'Carlos',
-};
+const list1 = [1, 2, 3, 4, 5];
+const list2 = [1, 2, 3, 4, 5];
 
-const lesson3 = {
-  materia: 'Matemática',
-  numeroEstudantes: 10,
-  professor: 'Maria Clara',
-  turno: 'noite',
-};
-let allLesson = Object.assign({}, {lesson1, lesson2, lesson3});
+assert.deepStrictEqual(list1, list2, 'Erro: list1 e list2 não são estritamente iguais');
 
-console.log();
+const person1 = { name: 'john', age: 21 };
+const person2 = { name: 'john', age: 21 };
 
-const opa = (obj) => {
-  let number = Object.entries(obj).length;
-  let sum = 0;
-   sum += sum + 10;
-  console.log(sum);
-  number === 0 ? 0: opa(Object.entries(obj).length -1)
-  return sum;
-}
-console.log(opa(allLesson))
+assert.deepStrictEqual(person1, person2, 'Erro: person1 e person2 não são estritamente iguais');
 
-// console.log(allLesson.length);
+const person3 = { name: 'john', age: 19 };
+
+assert.notDeepStrictEqual(person1, person3, 'Erro: os valores dos objetos são estritamente iguais');
