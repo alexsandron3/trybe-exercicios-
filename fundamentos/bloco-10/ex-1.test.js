@@ -1,5 +1,5 @@
 // sum.js
-const {sum, myRemove, myRemoveWithoutCopy, myFizzBuzz} = require('./ex-1')
+const {sum, myRemove, myRemoveWithoutCopy, myFizzBuzz, obj1, obj2, obj3} = require('./ex-1')
 
 describe('Testes do bloco 7.3', () => {
   describe('EX 1- Testa se a função faz a operação correta', () => {
@@ -57,4 +57,10 @@ describe('Testes do bloco 7.3', () => {
       expect(myFizzBuzz('a')).toBe(false);
     });
   });
+  describe('EX 5 :', () => {
+    it('Compare dois objetos para verificar se são idênticos ou não', () => {
+      expect(obj1).toEqual(obj2);
+      expect(obj1).not.toEqual(obj3);
+    })
+  })
 });
