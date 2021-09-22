@@ -1,5 +1,5 @@
 // sum.js
-const {sum, myRemove} = require('./ex-1')
+const {sum, myRemove, myRemoveWithoutCopy, myFizzBuzz} = require('./ex-1')
 
 describe('Testes do bloco 7.3', () => {
   describe('EX 1- Testa se a função faz a operação correta', () => {
@@ -23,6 +23,38 @@ describe('Testes do bloco 7.3', () => {
     });
     it('Verifica se a função remove o número 5', () => {
       expect(myRemove([1, 2, 3, 4], 5)).toEqual([1, 2, 3, 4]);
-    })
+    });
+  });
+  describe('EX 3- testa se a função myRemoveWithoutCopy funciona como esperado: ', () => {
+    it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) retorna o array esperado', () => {
+      const myArray = [1, 2, 3, 4];
+      expect(myRemoveWithoutCopy(myArray, 3)).toEqual([1, 2, 4]);
+    });
+    it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 3) não retorna o array [1, 2, 3, 4]', () => {
+      const myArray = [1, 2, 3, 4];
+      expect(myRemoveWithoutCopy(myArray, 3)).not.toEqual([1, 2, 3, 4]);
+    });
+    it('Verifique se a chamada myRemoveWithoutCopy([1, 2, 3, 4], 5) retorna o array esperado', () => {
+      const myArray = [1, 2, 3, 4];
+      expect(myRemoveWithoutCopy(myArray, 5)).toEqual([1, 2, 3, 4]);
+    });
+  });
+
+  describe('EX 4- ', () => {
+    it('Faça uma chamada com um número divisível por 3 e 5 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(15)).toBe('fizzbuzz');
+    });
+    it('Faça uma chamada com um número divisível por 3 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(3)).toBe('fizz');
+    });
+    it('Faça uma chamada com um número divisível por 5 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(5)).toBe('buzz');
+    });
+    it('Faça uma chamada com um número que não é divisível por 3 ou 5 e verifique se o retorno é o esperado', () => {
+      expect(myFizzBuzz(1)).toBe(1);
+    });
+    it('Faça uma chamada com um parâmetro que não é um número e verifique se o retorno é o esperado, ', () => {
+      expect(myFizzBuzz('a')).toBe(false);
+    });
   });
 });
