@@ -27,15 +27,18 @@ export class Content extends Component {
       <ol key="conteudos">
       {conteudos.map(({conteudo, bloco, status}) => {
         return (
-          <>
-            <li>
-              O conteúdo é: {conteudo} <br/>
-              Status: {status} <br/>
-              Bloco: {bloco}  
-            </li>
-          </>
+          <div className="card">
+            <div className="content">
+              <li className="card-content">
+                O conteúdo é: {conteudo} <br/>
+                Status: {status} <br/>
+                Bloco: {bloco}  
+              </li>
+            </div>
+          </div>
           )
-        })}
+        })
+      }
       </ol>
     );
   }

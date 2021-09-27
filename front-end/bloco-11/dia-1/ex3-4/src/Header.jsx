@@ -3,10 +3,10 @@ import { Content } from './Content';
 export class Header extends Component {
   render() {
     return (
-      <>
-        <h1> Conteúdos de Front-End</h1>
+      <div className="card">
+        <h1 className="has-text-centered card-header-title"> Conteúdos de Front-End</h1>
         <Content />
-      </>
+      </div>
     );
   }
 }
