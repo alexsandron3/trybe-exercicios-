@@ -1,17 +1,7 @@
 import "bulma/css/bulma.min.css";
-import { Pokemon } from "./components/Pokemon";
-import data from "./data";
+import Pokedex from "./components/Pokedex";
 function App() {
-  return (
-    <div className="container">
-      <h1 className="has-text-centered is-size-1">Pokedex</h1>
-      <div className="columns is-multiline is-centered ">
-        {data.map((pokemon) => (
-          <Pokemon Pokemon={pokemon} />
-        ))}
-      </div>
-    </div>
-  );
+  return <Pokedex />;
 }
 
 export default App;

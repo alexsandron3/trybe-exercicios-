@@ -1,10 +1,12 @@
 import React, { Component } from "react";
 import propTypes from "prop-types";
-export class Pokemon extends Component {
+
+export default class Pokemon extends Component {
   render() {
     const { name, type, averageWeight, image, moreInfo } = this.props.Pokemon;
-    const { value, measurementUnit } = averageWeight;
-    const weight = `${value} ${measurementUnit}`;
+    const weight = 0;
+    // const { value, measurementUnit } = averageWeight;
+    // const weight = `${value} ${measurementUnit}`;
     return (
       <div className="column is-4 ml-3">
         <div className="card has-text-centered">
