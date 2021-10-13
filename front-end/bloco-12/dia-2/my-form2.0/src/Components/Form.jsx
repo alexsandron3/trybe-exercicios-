@@ -21,8 +21,8 @@ export default class Form extends Component {
             </Typography>
             <form>
               <Grid container>
-                <Grid item xs={2}>
-                  <TextField id="" label="Nome" value="" fullWidth />
+                <Grid item xs={12} md={3} lg={3}>
+                  <TextField id="" label="Nome" value="" />
                   <TextField id="" label="" />
                 </Grid>
               </Grid>
